@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QMainWindow {
+        background-color: #f4f6fa;
+    }
+    QLabel {
+        color: #333;
+    }
+    QLineEdit {
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+    QPushButton {
+        background-color: #2b7bb9;
+        color: white;
+        font-size: 16px;
+        border-radius: 6px;
+        padding: 10px;
+    }
+    QPushButton:hover {
+        background-color: #225c8c;
+    }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayoutCentral">
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <!-- Page 0 -->
+      <widget class="QWidget" name="page_0">
+       <layout class="QVBoxLayout" name="verticalLayoutPage0">
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <item>
+         <widget class="QLabel" name="titleLabel">
+          <property name="text">
+           <string>SJF Simulation</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px; font-weight: bold; margin: 20px;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="processLabel">
+          <property name="text">
+           <string>Enter Number of Processes:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 16px; margin: 10px;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="process_num">
+          <property name="minimumHeight">
+           <number>40</number>
+          </property>
+          <property name="maximumWidth">
+           <number>300</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="processes_continue">
+          <property name="text">
+           <string>Continue</string>
+          </property>
+          <property name="minimumHeight">
+           <number>40</number>
+          </property>
+          <property name="maximumWidth">
+           <number>200</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- Page 1 -->
+      <widget class="QWidget" name="page_1">
+       <layout class="QVBoxLayout" name="verticalLayoutPage1">
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <item>
+         <widget class="QLabel" name="burstTimesLabel">
+          <property name="text">
+           <string>Enter Burst Times</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 20px; font-weight: bold; margin: 15px;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="processInputLayout">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="simulate_button">
+          <property name="text">
+           <string>Simulate</string>
+          </property>
+          <property name="minimumHeight">
+           <number>40</number>
+          </property>
+          <property name="maximumWidth">
+           <number>200</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- Page 2 -->
+      <widget class="QWidget" name="page_2">
+       <layout class="QVBoxLayout" name="verticalLayoutPage2">
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <item>
+         <widget class="QLabel" name="resultsTitle">
+          <property name="text">
+           <string>Simulation Results - SJF</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 20px; font-weight: bold; margin: 15px;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="resultsTable">
+            <property name="rowCount">
+                <number>0</number>
+            </property>
+            <property name="columnCount">
+                <number>4</number>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">font-size: 14px; margin: 10px;</string>
+            </property>
+            <property name="horizontalHeaderLabels">
+                <stringlist>
+                <string>Process ID</string>
+                <string>Burst Time</string>
+                <string>Waiting Time</string>
+                <string>Turnaround Time</string>
+                </stringlist>
+            </property>
+          </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="averageResultsLabel">
+          <property name="text">
+           <string>Average Waiting Time: 0 | Average Turnaround Time: 0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 14px; margin-top: 10px;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
